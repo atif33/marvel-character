@@ -1,0 +1,29 @@
+<form [formGroup]="form">
+  <div class="form-row">
+    <div class="form-group col-md-5">
+      <label>Nom</label>
+      <input type="text" class="form-control"  placeholder="Nom" formControlName="lastName">
+    </div>
+    <div class="form-group col-md-5">
+      <label for="inputMontant">Prénom</label>
+      <input type="text" class="form-control" id="inputMontant" placeholder="Prénom"
+             formControlName="firstName">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-5">
+      <label>E-mail</label>
+      <input type="email" class="form-control" placeholder="E-mail" formControlName="email">
+    </div>
+    <div class="form-group col-md-5">
+      <label>Date de naissance</label>
+      <input class="form-control" placeholder="yyyy-mm-dd"
+             name="dp" ngbDatepicker #d="ngbDatepicker" formControlName="dateOfBirth">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button"></button>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-outline-success" (click)="onSubmit()">Enregistrer</button>
+  <button class="btn btn-outline-danger ml-1" (click)="resetForm()">Annuler</button>
+</form>
