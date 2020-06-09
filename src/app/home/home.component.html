@@ -8,10 +8,12 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let character of allCharacter; index as i">
-    <th scope="row">{{ i + 1 }}</th>
+  <tr *ngFor="let character of allCharacter| paginate: { id: 'checks_pagination',
+      itemsPerPage: 4,
+      currentPage: page}; index as i">
+    <th scope="row">{{ i + 1}}</th>
     <td>
-      <img src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" class="mr-2" style="width: 20px">
+      <img src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" height="200" width="200">
     </td>
     <td>
       {{ character.name }}
@@ -20,3 +22,6 @@
   </tr>
   </tbody>
 </table>
+<pagination-controls  id="checks_pagination" (pageChange)="page = $event" nextLabel="Suivant"
+                      previousLabel="Précedent" autoHide="false">
+</pagination-controls>

@@ -10,6 +10,7 @@ import {HeaderComponent} from './header/header.component';
 import {NgbDatepickerModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {HttpClientModule} from '@angular/common/http';
     NgbDatepickerModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

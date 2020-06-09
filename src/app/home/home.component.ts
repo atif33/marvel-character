@@ -10,7 +10,7 @@ import {MarvelObject} from '../_model/MarvelObject';
 })
 export class HomeComponent implements OnInit {
   allCharacter;
-  name: string;
+  page = 1;
 
   constructor(private marvelService: MarvelService) {
   }
