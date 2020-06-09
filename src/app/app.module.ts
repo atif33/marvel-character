@@ -7,8 +7,9 @@ import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import {NewHeroComponent} from './new-hero/new-hero.component';
 import {HeaderComponent} from './header/header.component';
-import {NgbDatepickerModule} from '@ng-bootstrap/ng-bootstrap';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NgbDatepickerModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     NgbDatepickerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
