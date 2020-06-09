@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Character} from '../_model/Character';
+
 
 @Component({
   selector: 'app-new-hero',
@@ -8,6 +10,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class NewHeroComponent implements OnInit {
   form: FormGroup;
+
 
   constructor(private  formBuilder: FormBuilder) {
   }
@@ -18,13 +21,17 @@ export class NewHeroComponent implements OnInit {
 
   onSubmit() {
     if (this.form.invalid) {
-
     } else {
+      const character: Character = new Character(this.form.controls.firstName.value, this.form.controls.lastName.value,
+        this.form.controls.email.value, this.form.controls.dateOfBirth.value);
+      console.log('titi' + character);
+      localStorage.setItem('character', JSON.stringify(character));
     }
 
   }
 
   resetForm() {
+    this.form.reset();
 
   }
 
